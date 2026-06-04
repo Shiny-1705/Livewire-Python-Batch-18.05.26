@@ -1,0 +1,74 @@
+Break Statement(for loop)
+Print numbers from 1 to 20 and stop when the number is 10.
+Create a password checker that exits when the correct password is entered.
+Accept numbers from the user and stop when the user enters 0.
+Search for a specific element in a list and stop when it is found.
+Print numbers from 1 to 100 and stop at the first multiple of 17.
+Create a menu-driven program and exit when the user chooses "Exit".
+Keep asking for input until the user enters "quit".
+Find the first even number in a list and stop the loop.
+
+Continue Statement - Task Questions
+Print numbers from 1 to 20, skipping 10.
+Print only odd numbers from 1 to 50.
+Print only even numbers from 1 to 50.
+Print numbers from 1 to 100, skipping multiples of 5.
+Print all letters of a name except vowels.
+Print numbers from 1 to 30, skipping multiples of 3.
+Print all elements in a list except negative numbers.
+Print numbers from 1 to 20, skipping even numbers.
+
+Pass Statement - Task Questions
+Create an empty function called student_details().
+Create an empty class called Employee.
+Write a while loop with a pass statement.
+Write a for loop with a pass statement.
+Create a placeholder function for a future calculator project.
+Create a placeholder class called BankAccount.
+Create a menu structure using pass for options not yet implemented.
+Create an empty if block using pass.
+Mixed Task Questions (Break, Continue, Pass)
+Print numbers from 1 to 50:
+Skip multiples of 4.
+Stop when the number reaches 40.
+Create a login system:
+Allow 3 attempts.
+Exit using break when login is successful.
+Print numbers from 1 to 100:
+Skip multiples of 10 using continue.
+Stop at 75 using break.
+Create a simple ATM menu:
+Use pass for unimplemented options.
+Use break to exit.
+Print all numbers from 1 to 30:
+Skip even numbers.
+Stop at 25.
+
+While loop
+Break
+Print numbers from 1 to 10 and stop at 5.
+Print numbers from 1 to 20 and stop at 15.
+Keep asking for a number and stop when the user enters 0.
+Keep asking for a password and stop when it is correct.
+Print numbers from 1 to 100 and stop at 50.
+
+Continue
+Print numbers from 1 to 10, skipping 5.
+Print numbers from 1 to 20, skipping 10.
+Print only odd numbers from 1 to 20.
+Print only even numbers from 1 to 20.
+Print numbers from 1 to 30, skipping multiples of 3
+
+Pass
+Create a while loop with a pass statement.
+Print numbers from 1 to 5 and use pass when the number is 3.
+Create an empty while loop using pass.
+Use pass inside an if condition in a while loop.
+Create a placeholder program using a while loop and pass.
+
+Mixed Questions
+Print numbers from 1 to 20, skip 5, and stop at 15.
+Print numbers from 1 to 30, skip multiples of 4, and stop at 25.
+Create a login system using a while loop and break.
+Print only odd numbers using continue.
+Create a menu program with pass for unfinished options and break to exit.
