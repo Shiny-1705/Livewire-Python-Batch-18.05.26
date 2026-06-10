@@ -1,0 +1,39 @@
+📝 List Tasks
+Create a list of 5 student names and display it.
+Add a new element to the list using append().
+Insert an element at the 2nd position.
+Remove an element from the list.
+Find the length of the list.
+Sort the list in ascending order.
+Reverse the list.
+Find the largest number in a list.
+Count the occurrence of an element.
+Copy a list and display both lists.
+📌 Tuple Tasks
+Create a tuple of 5 numbers and display it.
+Find the length of a tuple.
+Access the first and last elements of a tuple.
+Count how many times an element occurs in a tuple.
+Find the index of a given element.
+Concatenate two tuples.
+Create a tuple containing different data types.
+Convert a list into a tuple.
+Convert a tuple into a list.
+Check whether a particular element exists in a tuple.
+🔷 Set Tasks
+Create a set of 5 numbers and display it.
+Add a new element to the set.
+Remove an element using remove().
+Remove an element using discard().
+Find the union of two sets.
+Find the intersection of two sets.
+Find the difference between two sets.
+Check whether one set is a subset of another set.
+Check whether one set is a superset of another set.
+Clear all elements from a set.
+⭐ Combined Tasks
+Create a list, tuple, and set with the same elements and display them.
+Convert a list into a tuple and a set.
+Convert a tuple into a list.
+Find common elements between two sets.
+Store student names in a list, tuple, and set and compare the outputs.
