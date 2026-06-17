@@ -1,0 +1,24 @@
+🧪 Lambda Tasks 
+Write a lambda function to add two numbers.
+Write a lambda function to find the square of a number.
+Write a lambda function to find the cube of a number.
+Write a lambda function to check whether a number is even or odd.
+Write a lambda function to find the largest of two numbers.
+🧪 Filter Tasks
+Filter even numbers from a list.
+Filter odd numbers from a list.
+Filter numbers greater than 10.
+Filter positive numbers from a list.
+Filter numbers divisible by 5.
+🧪 Map Tasks
+Use map() to find squares of a list of numbers.
+Use map() to double all numbers in a list.
+Use map() to add 5 to each element in a list.
+Use map() to find cubes of numbers in a list.
+Use map() to convert numbers into strings.
+🧪 Combined Map + Filter Tasks (5 Questions)
+Filter even numbers and find their squares.
+Filter odd numbers and double them.
+Filter numbers greater than 5 and find their cubes.
+Filter positive numbers and add 10 to each number.
+Filter numbers divisible by 3 and multiply them by 2.
