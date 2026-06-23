@@ -1,0 +1,90 @@
+1. Math Module Tasks
+
+Task 1
+Find:
+Square root of 144
+Power of 5³
+Factorial of 6
+Task 2
+Calculate:
+ceil(5.2)
+floor(5.8)
+gcd(24, 36)
+Task 3
+Create a calculator using the math module.
+
+2. Datetime Module Tasks
+Task 1
+Display:
+Current date
+Current time
+Current year
+Task 2
+Find your age using date of birth.
+Task 3
+Print today's date in:
+Python
+DD-MM-YYYY
+format.
+
+3. Date Module Tasks
+Task 1
+Create a date object for your birthday.
+Task 2
+Find the difference between:
+Today's date
+Your birthday
+Task 3
+Display:
+Day
+Month
+Year separately
+
+4. Calendar Module Tasks
+Task 1
+Print calendar for current month.
+Task 2
+Print calendar for the year 2026.
+Task 3
+Check whether:
+2024
+2025
+2028
+are leap years.
+Task 4
+Find the weekday of your birthday.
+
+5. PyWhatKit Tasks
+Task 1
+Send a WhatsApp message automatically.
+Task 2
+Search "Python Programming" on Google using PyWhatKit.
+Task 3
+Play a YouTube video automatically.
+Task 4
+Convert text into handwritten style.
+
+6. Random Module Tasks
+Task 1
+Generate a random number between 1 and 100.
+Task 2
+Generate a random OTP of 6 digits.
+Task 3
+Create a dice simulator.
+Example:
+Python
+1 to 6
+Task 4
+Create a Rock-Paper-Scissors game using random choices.
+
+7. NumPy Module Tasks
+Task 1
+Create a NumPy array:
+Python
+[10,20,30,40,50]
+Task 2
+Find:
+Sum
+Mean
+Maximum
+Minimum
