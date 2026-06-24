@@ -1,0 +1,31 @@
+Mini-project
+import math
+import random
+import webbrowser
+import numpy as np
+import time
+print("Emergency Mode activated")
+print("Quick!!!Cleaning up desktop...")
+time.sleep(1)
+#Numpy
+sites=np.array(
+    ["https://en.wikipedia.org/wiki/Wikipedia",
+     "https://www.w3schools.com/",
+     "https://github.com/login",
+     "https://www.linkedin.com/feed/"]
+)
+#random
+sites_open=np.random.choice(sites,size=3,replace=False)
+
+#Math
+base_score=78.6
+random_boost=random.uniform(5.1,15.5)
+final=math.floor(base_score+random_boost)
+print(f"\nSystem log:Operating at{final}%")
+print("Deploying now..")
+
+#Webbroswer
+for sites in sites_open:
+    print(f"Launching:{sites}")
+    webbrowser.open_new_tab(sites)
+print("\n Successfully created!!")
