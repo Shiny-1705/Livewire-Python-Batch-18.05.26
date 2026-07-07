@@ -1,0 +1,250 @@
+CREATE DATABASE cybersec_academy;
+
+USE cybersec_academy;
+
+CREATE TABLE students(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    phone VARCHAR(20),
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(100)
+);
+
+
+import tkinter as tk
+from tkinter import messagebox
+import pymysql
+
+# ---------------- DATABASE CONNECTION ----------------
+
+def get_connection():
+    return pymysql.connect(
+        host="localhost",
+        user="root",
+        password="your_password",  # Change this
+        database="cybersec_academy"
+    )
+
+# ---------------- MAIN WINDOW ----------------
+
+root = tk.Tk()
+root.title("CyberSec Academy")
+root.geometry("900x600")
+root.configure(bg="#dff6ff")
+
+# ---------------- FRAMES ----------------
+
+frames = {}
+
+for page in ["home", "register", "login", "dashboard"]:
+    frame = tk.Frame(root, bg="#dff6ff")
+    frame.place(x=0, y=0, width=900, height=600)
+    frames[page] = frame
+
+
+def show_frame(name):
+    frames[name].tkraise()
+
+
+# ---------------- HOME PAGE ----------------
+
+tk.Label(
+    frames["home"],
+    text="CyberSec Academy",
+    font=("Arial", 28, "bold"),
+    bg="#dff6ff"
+).pack(pady=80)
+
+tk.Button(
+    frames["home"],
+    text="Register",
+    width=15,
+    font=("Arial", 14),
+    command=lambda: show_frame("register")
+).pack(pady=10)
+
+tk.Button(
+    frames["home"],
+    text="Login",
+    width=15,
+    font=("Arial", 14),
+    command=lambda: show_frame("login")
+).pack(pady=10)
+
+# ---------------- REGISTER PAGE ----------------
+
+tk.Label(
+    frames["register"],
+    text="Student Registration",
+    font=("Arial", 24, "bold"),
+    bg="#dff6ff"
+).pack(pady=20)
+
+tk.Label(frames["register"], text="Name", bg="#dff6ff").pack()
+name_entry = tk.Entry(frames["register"], font=("Arial", 14))
+name_entry.pack(pady=5)
+
+tk.Label(frames["register"], text="Phone", bg="#dff6ff").pack()
+phone_entry = tk.Entry(frames["register"], font=("Arial", 14))
+phone_entry.pack(pady=5)
+
+tk.Label(frames["register"], text="Email", bg="#dff6ff").pack()
+email_entry = tk.Entry(frames["register"], font=("Arial", 14))
+email_entry.pack(pady=5)
+
+tk.Label(frames["register"], text="Password", bg="#dff6ff").pack()
+password_entry = tk.Entry(frames["register"], font=("Arial", 14), show="*")
+password_entry.pack(pady=5)
+
+
+def register():
+    name = name_entry.get()
+    phone = phone_entry.get()
+    email = email_entry.get()
+    password = password_entry.get()
+
+    if not name or not phone or not email or not password:
+        messagebox.showerror("Error", "All fields are required")
+        return
+
+    try:
+        con = get_connection()
+        cur = con.cursor()
+
+        sql = """
+        INSERT INTO students(name, phone, email, password)
+        VALUES(%s,%s,%s,%s)
+        """
+
+        cur.execute(sql, (name, phone, email, password))
+
+        con.commit()
+        con.close()
+
+        messagebox.showinfo(
+            "Success",
+            "Registration Successful"
+        )
+
+        show_frame("login")
+
+    except Exception as e:
+        messagebox.showerror(
+            "Database Error",
+            str(e)
+        )
+
+
+tk.Button(
+    frames["register"],
+    text="Register",
+    font=("Arial", 14),
+    command=register
+).pack(pady=20)
+
+tk.Button(
+    frames["register"],
+    text="Back",
+    command=lambda: show_frame("home")
+).pack()
+
+# ---------------- LOGIN PAGE ----------------
+
+tk.Label(
+    frames["login"],
+    text="Student Login",
+    font=("Arial", 24, "bold"),
+    bg="#dff6ff"
+).pack(pady=20)
+
+tk.Label(frames["login"], text="Email", bg="#dff6ff").pack()
+login_email = tk.Entry(frames["login"], font=("Arial", 14))
+login_email.pack(pady=5)
+
+tk.Label(frames["login"], text="Password", bg="#dff6ff").pack()
+login_password = tk.Entry(frames["login"], font=("Arial", 14), show="*")
+login_password.pack(pady=5)
+
+student_name_label = tk.Label(
+    frames["dashboard"],
+    text="",
+    font=("Arial", 20, "bold"),
+    bg="#dff6ff"
+)
+
+student_name_label.pack(pady=40)
+
+
+def login():
+    email = login_email.get()
+    password = login_password.get()
+
+    try:
+        con = get_connection()
+        cur = con.cursor()
+
+        sql = """
+        SELECT name
+        FROM students
+        WHERE email=%s AND password=%s
+        """
+
+        cur.execute(sql, (email, password))
+
+        result = cur.fetchone()
+
+        con.close()
+
+        if result:
+            student_name_label.config(
+                text=f"Welcome {result[0]}"
+            )
+
+            show_frame("dashboard")
+
+        else:
+            messagebox.showerror(
+                "Login Failed",
+                "Invalid Email or Password"
+            )
+
+    except Exception as e:
+        messagebox.showerror(
+            "Error",
+            str(e)
+        )
+
+
+tk.Button(
+    frames["login"],
+    text="Login",
+    font=("Arial", 14),
+    command=login
+).pack(pady=20)
+
+tk.Button(
+    frames["login"],
+    text="Back",
+    command=lambda: show_frame("home")
+).pack()
+
+# ---------------- DASHBOARD ----------------
+
+tk.Label(
+    frames["dashboard"],
+    text="Cyber Security Training Portal",
+    font=("Arial", 24, "bold"),
+    bg="#dff6ff"
+).pack()
+
+tk.Button(
+    frames["dashboard"],
+    text="Logout",
+    font=("Arial", 14),
+    command=lambda: show_frame("home")
+).pack(pady=20)
+
+# ---------------- START ----------------
+
+show_frame("home")
+root.mainloop()
